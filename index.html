@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>my github pages</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<h1>hello weyyy</h1>
-	</body>
+<head>
+	<title>30MFF</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<button onclick="myFunction()">Click Me!</button>
+	<p id="demo"></p>
+	<script>
+	function myFunction() {
+		var hour = new Date().getHours(); 
+    	var greeting;
+    	if (hour < 18) {
+    	    greeting = "Good day";
+    	} else {
+    	    greeting = "Good evening";
+    	}
+    	document.getElementById("demo").innerHTML = greeting;
+	}
+	</script>
+	<div class="intro">
+		<h1 class="title">Welcome to the 30 Minute Film Festival Premier Site</h1>
+		<h2 class="ltitle">This was a collective effort to shoot a film in 30 minutes, and edit it in 30 minutes more.</h2>
+		<div class="buttons">
+			<h3 onclick="myFunction()"class="home">HOME</h3>
+			<h3 class="information">INFORMATION</h3>
+			<h3 class="making">Making Of</h3>
+			<h3 class="bloopers">Bloopers</h3>
+			<h3 class="coming">Coming Soon</h3>
+		</div>
+	</div>
+	<img src = "sample.png" class ="pic"/>
+</body>
 </html>
