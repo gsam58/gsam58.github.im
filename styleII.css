@@ -1,0 +1,187 @@
+body{
+	background-color: rgba(86, 189, 45, 0.781);
+    
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(36, 107, 29);
+}
+.annoying1 {
+    margin-top: 25px;
+    width: 12px;
+    height: 100px;
+    background: darkgreen;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+.annoying1:hover {
+    width: 300px;    
+}
+.annoying2 {
+    margin-top: 50px;
+    width: 12px;
+    height: 100px;
+    background: darkgreen;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+.annoying2:hover {
+    width: 300px;
+}
+.annoying3 {
+    margin-top: 50px;
+    width: 12px;
+    height: 100px;
+    background: darkgreen;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+.annoying3:hover {
+    width: 300px;
+}
+.annoying4 {
+    margin-top: 50px;
+    width: 12px;
+    height: 100px;
+    background: darkgreen;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+.annoying4:hover {
+    width: 300px;
+}
+.annoying5 {
+    margin-top: 50px;
+    width: 12px;
+    height: 100px;
+    background: darkgreen;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+.annoying5:hover {
+    width: 300px;
+}
+audio{
+    height: 0;
+    width: 0;
+}
+.title {
+    position:right;
+    padding-top:30px;
+    font-family:"courier new",monospace;
+    position: fixed;
+    top: 0;
+    right: 7%;
+    font-size: 50px;
+}
+.instructions{
+    padding-top:30px;
+    position: fixed;
+    top: 110px;
+    right: 7%;
+    width: 60%;
+    font-family:"courier new",monospace;
+    font-size: 35px;
+    font-style: oblique;
+}
+.title2{
+    margin-top:50px;
+    position:fixed;
+    left: 35%;
+    right:35%;
+    font-family:"courier new",monospace;
+}
+.video{
+    position: fixed;
+    top:30%;
+    left:25%;
+    right: 20%;
+}
+.title3 {
+    margin-top:50px;
+    position:fixed;
+    left: 35%;
+    right:35%;
+    font-family:"courier new",monospace;
+}
+.title4{
+    margin-top:50px;
+    position:fixed;
+    left: 35%;
+    right:35%;
+    font-family:"courier new",monospace;
+}
+.aboutparagraph{
+    position: relative;
+    padding-top:10%;
+    font-family:"courier new",monospace;
+    -webkit-column-count: 3; 
+    -moz-column-count: 3; 
+    column-count: 3;
+    font-size:30px;
+}
+.filmlogo{
+    width: 400px;
+    height: 300px;
+    background-color: red;
+    -webkit-animation-name: logo;  
+    -webkit-animation-duration: 60s;  
+    animation-name: logo;
+    animation-duration: 60s;
+    position:relative;
+    left:35%;
+    right:35%;
+}
+
+ 
+@-webkit-keyframes logo {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+
+@keyframes logo {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}   
+.quotes{
+    position: relative;
+    padding-top:10%;
+    padding-bottom: 5%;
+    font-family:"courier new",monospace;
+    -webkit-column-count: 3; 
+    -moz-column-count: 3; 
+    column-count: 3;
+    font-size:30px;
+}
