@@ -1,0 +1,984 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title>The door wallpaper #18999 - Open Walls</title>
+  <meta name="description" content="The door, image #18999, uploaded by anonymous in others category." />
+  <meta name="keywords" content="wallpaper, 2560x1600, 1920x1200, 1680x1050, 1440x900, 1280x800, door, room, dark, red, light, image, wallpaper, share, upload, download, wiki, comment, vote, edit" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel=stylesheet href="http://f.s.openwalls.net/css/style.css" title="css style" type="text/css">
+  <link rel="icon" href="http://h.s.openwalls.net/favicon.ico" type="image/x-icon" />
+  <script type="text/javascript" src="http://e.s.openwalls.net/js/jquery.js"></script>
+  <script type="text/javascript" src="http://e.s.openwalls.net/js/function.js"></script>
+  <script type="text/javascript" src="http://g.s.openwalls.net/js/jquery.validate.js"></script>
+  <link rel="alternate" type="application/rss+xml" href="/rss?id=18999" title="" id="galery" />
+
+  <script type="text/javascript">
+    function onlycharfortag_validation(value, element){   
+       if(!value) return true;                                                                                                                            
+       return /^[a-zA-Z0-9\-_',\;\s]+$/.test(value);                                                                                                                                
+    }
+ function max20_validation(str){                                                                                                                                                   
+    var arr = str.split(" ");                                                                                                                                                       
+    var l=0;                                                                                                                                                                        
+    for(var i in arr){                                                                                                                                                              
+      if(l<arr[i].length)                                                                                                                                                           
+	l=arr[i].length;                                                                                                                                                            
+    };                                                                                                                                                                              
+    if(l>20) {                                                                                                                                                                      
+      return false;                                                                                                                                                                 
+     }else{                                                                                                                                                                         
+      return true;                                                                                                                                                                  
+      }                                                                                                                                                                             
+  }         
+    function report_adult_moderate(image_id) {
+        $("#reportwindow").show();
+				$("#reportwindow").load("/rep-adult-moderate.php", "id=" + image_id);
+				return false;
+    }
+    function report_adult_unmoderate(image_id) {
+        $("#reportwindow").show();
+				$("#reportwindow").load("/rep-adult-unmoderate.php", "id=" + image_id);
+				return false;
+    }
+    function report_yes(moderate) {
+        if(moderate == 1)
+            url = "rep-adult-moderate.php";
+        else
+            url = "rep-adult-unmoderate.php";
+        
+        var imageid = $("#reportinappropriateform input[name=imageid]").val();
+        $("#reportwindow .contentwindow").html("");
+        $("#reportwindow .contentwindow").load("/" + url, {id: imageid});
+        $("#reportwindow").delay(1000).fadeOut(300, function() { 
+            $(this).empty();   
+            if(moderate == 0)
+                $(".o-report-unmoderate").replaceWith('<div class="o o-report-moderate" style="position:relative;float:right;"><a href="javascript:;" onclick="javascript:report_adult_moderate(' + imageid + ');" title="Flag as inappropriate (18+ years)"></a></div>');
+            else
+                $(".o-report-moderate").replaceWith('<div class="o o-report-unmoderate" style="position:relative;float:right;"><a href="javascript:;" onclick="javascript:report_adult_unmoderate(' + imageid + ');" title="Remove inappropriate flag (18+ years)"></a></div>');                
+        });
+        return false;
+    }
+    
+    function comment_box(del) {
+        var commentbox = '<div class="popup" id="reportcomment" style="display: inline">' +
+            '<div class="popuptitle">' +
+              '<div style="float: left; margin: 0 auto; width: 97%">' +
+                'Comment ' + del +
+              '</div>' +
+              '<div class="o o-xclose x_close"></div>' +
+            '</div>' +
+            '<div class="contentwindow" style="padding: 15px 10px 10px 10px">' +
+                '<div style="text-align: center; margin: 10px">' +
+                    'Are you sure you want to ' + del + ' this comment?' +
+                '</div>' +
+                '<div style="text-align: center; margin: 0 auto; overflow: auto; width: 102px">' +
+            	    '<button border="0" class="button_yes" value="true">yes</button>' +
+            	    '<button border="0" class="button_no" value="false">no</button>' +
+            	  '</div>' +
+            '</div>' +
+        '</div>';
+        return commentbox;
+    }
+    
+    function report_comment(cid, del) {
+        if(del == 'report') {
+            $('body').prepend(comment_box(del)).show();
+            $("#reportcomment :button.button_yes").live("click", function() {
+                $("#reportcomment .contentwindow").load("/comments_report.php", {comments_id: cid});
+                $("#reportcomment").delay(1000).fadeOut(300);
+            });
+        } else if(del == 'delete') {
+            $('body').prepend(comment_box(del)).show();
+            $("#reportcomment :button.button_yes").live("click", function() {
+                $("#reportcomment .contentwindow").load("/comments_remove.php", {comments_id: cid});
+                $("#reportcomment").delay(1000).fadeOut(300);
+            });        
+        }
+        return false;
+    }
+      
+  </script>
+
+  <script type="text/javascript">
+    <!--
+
+    $(document).ready(function()
+    {
+// validare pentru tag add
+      $.validator.addMethod("onlycharfortag", onlycharfortag_validation, "Please enter only alphanumeric characters.");
+      $.validator.addMethod("max20", max20_validation, "A tag must have maximum 20 keywords");
+      $("#form_add_tag").validate({  
+	rules: {
+	  "tag_new": {
+	    required: false,
+	    minlength: 2,
+	    onlycharfortag: true,
+	    max20: true
+	  }
+	},
+	messages: {
+//	"tag_new": "Tags must have minimum 2 and maximum 20 keywords"
+	}
+      });
+//end validare pentru tag add
+
+$("#edit_info").validate({  
+	rules: {
+	  "update_author_name": {
+	    required: false,
+	    minlength: 2,
+	    onlycharfortag: true
+	  }
+	},
+	messages: {
+	  "update_author_name": "Author name must have minimum 3 and maximum 50 characters"
+	}
+});
+
+
+
+        $(".defaultText").focus(function(srcc)
+        {
+            if ($(this).val() == $(this)[0].title)
+            {
+                $(this).removeClass("defaultTextActive");
+                $(this).val("");
+            }
+        });
+        
+        $(".defaultText").blur(function()
+        {
+            if ($(this).val() == "")
+            {
+                $(this).addClass("defaultTextActive");
+                $(this).val($(this)[0].title);
+            }
+        });
+        
+        $(".defaultText").blur();        
+
+	    $(".o-email").click(function() {
+	    		$("#send_image_mail").css("display", "inline");
+	    		return false;
+		   });
+
+	    $(".x_close").click(function() {
+			    if($("#send_image_mail").css("display") != "none")
+				    $("#send_image_mail").fadeOut(300);
+       		return false;
+			});
+
+      $(".x_close").live("click", function() {
+          if($("#reportwindow").css("display") != "none")
+       		  $("#reportwindow").fadeOut(300);
+          if($("#reportcomment").css("display") != "none")
+       		  $("#reportcomment").fadeOut(300, function() { $(this).remove(); });			    
+          return false;
+      });
+
+			$("#send_image_mail").click(function(e) {
+			  e.stopPropagation(); 
+			});
+
+      $("#report_inappropriate_image").live("click", function(e) {
+          e.stopPropagation();
+      });
+        
+      $("#reportcomment").live("click", function(e) {
+          e.stopPropagation();
+      });
+	    $(document).click(function(e) {
+	        if(e.isPropagationStopped()) return;
+			    if($("#send_image_mail").css("display") != "none") {
+				    $("#send_image_mail").fadeOut(300);
+			    }
+					if($("#reportwindow").css("display") != "none") {
+						$("#reportwindow").fadeOut(300);
+					}
+          if($("#reportcomment").css("display") != "none")
+       		  $("#reportcomment").fadeOut(300, function() { $(this).remove(); });       	  
+			});			
+
+	    $('.button_cancel').click(function() {
+				if($("#send_image_mail").css("display") != "none") {
+					$("#send_image_mail").fadeOut(300);
+				}
+			});
+
+		  $(document).keydown(function(e) {
+		  	if (e.keyCode == 27) { 
+					if($("#send_image_mail").css("display") != "none") {
+						$("#send_image_mail").fadeOut(300);
+					}
+          if($("#reportwindow").css("display") != "none") {
+       		  $("#reportwindow").fadeOut(300);
+       	  }				
+          if($("#reportcomment").css("display") != "none")
+       		  $("#reportcomment").fadeOut(300, function() { $(this).remove(); });
+       		return false;
+       	}
+
+		  });
+
+      $(":button.button_no").live("click", function() {
+        if($("#reportwindow").css("display") != "none")
+       		$("#reportwindow").fadeOut(300);
+        if($("#reportcomment").css("display") != "none")
+       	  $("#reportcomment").fadeOut(300, function() { $(this).remove(); });       	         	
+          return false;
+      });
+
+      $(".o-report-moderate").click(function(e) {
+          e.stopPropagation();
+      });
+      
+      $(".o-report-moderate").live("click", function(e) {
+          e.stopPropagation();
+      });
+      
+      $(".o-report-unmoderate").click(function(e) {
+          e.stopPropagation();
+      });
+
+      $(".o-report-unmoderate").live("click", function(e) {
+          e.stopPropagation();
+      });
+      
+      $(".o-creport a").click(function(e) {
+        e.stopPropagation();
+      });
+       $(".o-cdelete a").click(function(e) {
+        e.stopPropagation();
+      });
+    });
+    
+    //-->
+  </script>
+<style type="text/css">
+    label.error { float:left; width:100%; display: block; color: white}
+  </style>
+</head>
+<body leftmargin="0" topmargin="0" marginwith="0" marginheight="0" border="0">
+<div id="wrap">
+<div id="top" style="position: relative">
+
+ <div style="float: left; position: absolute; bottom: 0; margin: 0 0 2px 2px">
+ 	</div>
+
+
+ <div id="top2">
+  <div id="menu">
+  
+   <div class="menu1_cell_owall">
+          <a href="http://openwalls.com"><span style="color: #d31111">O</span><span style="color: #ffd02a">p</span><span style="color: #2c8dc2">e</span><span style="color: #54c336">n</span>&nbsp;<span style="color: #253475">Walls</span></a>
+       </div>
+
+    <div class="menu1_cell">
+      <a href="/image?id=18999&hmenu=4r">Category</a>
+    </div>
+
+
+    <div class="menu1_cell">
+      <a href="/image?id=18999&hmenu=8b">Format</a>
+    </div>
+
+
+    <div class="menu1_cell">
+      <a href="/image?id=18999&hmenu=bv">Resolution</a>
+    </div>
+
+    
+    <div class="menu_upload_1">
+      <a href="/up">Upload</a>
+    </div>
+  </div>
+
+  <div  class="rss">
+  <div class="o o-rss"><a href="/rss?id=18999"></a></div>
+  </div>
+
+  <div id="menu_user" style="width: 250px">
+    
+
+<div id="container" style="float: right">
+	<div class="menu_btn_register">
+	  <a href="/reg">Register</a>
+	</div>
+	<div style="float: left">
+	  <div id="topnav" class="topnav"><a href="/login" class="signin"><span>Login</span></a> </div>
+	  <fieldset id="signin_menu">
+	    <form method="post" id="signin" action="">
+	      <div>
+	        <label for="username">Username or email:</label>
+	        <input id="username" name="username" value="" title="username" tabindex="1" type="text">
+	        <label for="password">Password:</label>
+	        <input id="password" name="password" value="" title="password" tabindex="2" type="password">
+		      <div id="password_incorect"></div>
+		      <div style="clear: both"><!-- --></div>
+		    </div>
+	
+	      <div class="remember">
+	        <div style="float: left;">
+	          <input style="margin: 0; height: 19px" id="signin_submit" value="Login" class="login_submit" tabindex="4" type="submit">
+	        </div>
+	        <div style="float: left; padding: 0; margin-top:2px">
+	          <div style="float: left; margin: 1px 3px 0 4px">
+	            <input id="remember_me" name="remember_me" type="checkbox" value="1" tabindex="3">
+	          </div>
+	          <div style="float: left; margin-top: 0">
+	            <label for="remember_me">Stay signed in</label>
+	          </div>
+	        </div>
+	      </div>
+	      <p class="forgot"> <a href="/rec" id="resend_password_link">Forgot your password? </a> </p>
+	      <p class="forgot-username"> <A id=forgot_username_link href="/reg">Register</A> </p>
+	    </form>
+	  </fieldset>
+	</div>
+</div>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".signin").click(function(e) {          
+				e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+				$(".signin").toggleClass("menu-open");
+            });
+			
+			$("fieldset#signin_menu").mouseup(function() {
+				return false
+			});
+			$(document).mouseup(function(e) {
+				if($(e.target).parent("a.signin").length==0) {
+					$(".signin").removeClass("menu-open");
+					$("fieldset#signin_menu").hide();
+				}
+			});			
+
+		  $(document).keyup(function(e) {
+		  	if (e.keyCode == 27) {
+					$(".signin").removeClass("menu-open");
+					$("fieldset#signin_menu").hide();
+		  	}
+		  });
+		  
+        });
+</script>
+
+
+
+
+<script type="text/javascript">
+$('#signin').submit(function() {
+  login();
+  return false;
+});
+</script>
+
+    
+  </div>
+
+<div id="facebook_like">
+	<div style="text-align: center; margin: 3px 0 0 3px">
+		<span style="float: left; padding-top: 2px; margin-left: 5px;">
+                    <g:plusone size="small" href="http://openwalls.com"></g:plusone>
+		</span>
+		<span style="float: left; margin-top: -1px; margin-right: 5px;">
+		    <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fopenwalls&amp;locale=en_US&amp;layout=button_count&amp;show_faces=true&amp;width=400&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=20"scrolling="no" frameborder="0" style="text-align: center; border: none; overflow:hidden; width:82px; height:22px;" allowTransparency="true"></iframe>
+		</span>
+  </div>
+</div>
+
+</div>  <!-- end div top2 -->
+
+<!-- afisarea categoriilor -->
+ <!-- end afisare categorii -->
+
+<!-- afisare format -->
+
+<!-- afisare format -->
+
+<!-- afisare rezolutii -->
+ 
+<!-- afisare rezolutii end-->
+
+
+<!-- afisare format din click pe rezolutii -->
+
+
+<!-- afisare rezolutii din click pe rezolutii end-->
+
+  <div id="top4">
+
+<div id="search">
+
+
+      <div class="search_form2">
+      <div style="width: 100%; overflow: auto">
+       <form name="search" method="post" action="http://openwalls.com/searchr.php">
+        <input type="hidden" name="url" value="/wallpapers" />
+        <div style="float: left">
+            <input type="text" id="searchfocus" style="width: 248px; height:17px; line-height: 17px; margin: 0; padding: 0 2px" class="text" size="26" MAXLENGTH="50" name="search" value="" >
+        </div>
+<!--       <input type="hidden" name="search_post" value="testsubmit"> --> 
+        <div style="float: left; margin-left: 1px;">
+          <input type="submit" class="button_srch" value="search">
+        </div>
+       </form>
+               
+        <div id="moderate">
+            <form action="login" method="post" name="moderateform">
+            <input type="hidden" name="moderate_post" value="testsubmit">
+                            <input type="hidden" name="moderate" value="0">
+                <a href="javascript:;" onclick="javascript:document.moderateform.submit();" title="You must logged in to change the moderation">Moderate on</a>
+                         </form>
+        </div>
+      </div>  
+    </div>
+    <div id="moderate_error" style="color:red;">
+            </div>
+    
+   </div><!-- div search -->
+    
+  </div> <!-- div top4 -->
+
+
+ 
+<div id="top5">
+
+  <div id="top51">
+<!-- recent buton -->
+      	      <div class="menu42_cell">	
+		<a href="/wallpapers?order=recentup&hmenu=15"><div class="order1">Recent</div><div class="order"><div class="o o-ojosn"></div></div></a>
+	      </div>
+	    
+<!-- rating button -->
+      	      <div class="menu4_cell">	
+		<a href="/wallpapers?order=ratingsdown&hmenu=1a"><div class="order1">Ratings</div><div class="order"><div class="o o-ojosa"></div></div></a>
+	      </div>
+	    
+<!-- popular button -->
+      	      <div class="menu4_cell">	
+		<a href="/wallpapers?order=viewsdown&hmenu=1m"><div class="order1">Views</div><div class="order" ><div class="o o-ojosa"></div></div></a>
+	      </div>
+	    
+<!-- ran button -->
+      	      <div class="menu4_cell" style="vertical-align: middle;">	
+		<a href="/wallpapers?order=random&hmenu=2y"><div style="margin-top:1px;">Random</div></a>
+	      </div>
+	    
+		
+  <div style="clear: both"><!-- --></div>
+  </div>
+</div>
+
+  <div style="clear: both"><!-- --></div>
+</div>
+
+<div class="main">
+
+<div id="top5_left">
+
+
+</div>  
+
+
+<div id="top5_right">
+
+
+</div> 
+
+<div style="clear: both"><!-- --></div>
+	
+
+<div id="view_image_id">
+
+
+<div id="view_image_center_top">
+
+
+
+
+
+
+
+</div>
+
+<div id="view_image_center_image">
+
+<div id="reportwindow"></div>
+
+
+
+ 	<div class="popup" id="send_image_mail" style="display: none">
+ 		<div class="popuptitle">
+ 		  <div style="float: left; margin: 0 auto; width: 97%">
+ 		    Send this image to a friend
+ 		  </div>
+ 		  <div class="o o-xclose x_close" ></div>
+ 		</div>
+   	<div style="padding: 15px 10px 10px 10px">
+			<form id="email_image" action="" method="post">
+			  <input type="hidden" name="email_image_send" value="1" />
+				<div class="email_image_row">
+					<div class="email_image_left">
+						<span class="text">Your name:</span>
+					</div>
+					<div class="email_image_right">
+	 					<input class="text" type="text" name="toemail_name" size="20"  maxlength="50" value="">
+	 				</div>
+					<div class="email_image_error">
+	 					<span class="error"></span>
+	 				</div>
+	 			</div>
+
+				<div class="email_image_row">
+					<div class="email_image_left">
+						<span class="text">Your friend's email:</span>
+					</div>
+					<div class="email_image_right">			
+						<input class="text" type="text" name="toemail_email" size="20"  maxlength="50" value="">
+					</div>
+					<div class="email_image_error">
+	 					<span class="error"></span>
+	 				</div>
+				</div>
+
+				<div class="email_image_row">
+					<div class="email_image_left">		
+						<span class="text">Your message:</span>
+					</div>
+					<div class="email_image_right">							
+						<textarea name="toemail_text" rows="2" style="width:200px; margin: 0; resize: none"></textarea>
+					</div>
+	 			</div>
+
+				
+				<div class="email_image_row">
+					<div class="email_image_left">		
+						&nbsp;
+					</div>
+					<div class="email_image_right">										
+						<input type="hidden" name="toemail_ascuns" value="toemail_testsubmit">
+	 					<input type="hidden" name="toemail_image_id" value="18999">
+	 					<input type="submit" class="button_send" name="toemail_apply" value="send" border="0">
+	 					<input type="button" class="button_cancel" name="toemail_cancel" value="cancel" border="0">
+	 				</div>
+	 			</div>
+			</form>
+ 		</div>
+	</div>
+
+
+  <img src="/image/18999/thumb3_the_door_.jpg" width="600" height="375" border="0" alt="The door">
+
+       <div class="view_image_info2">
+	<div class="view_image_views">
+	  <span class="image_text_info2">views: 9927</span>
+ 	</div>
+      </div>
+
+
+		  <div class="view_image_info5" style="margin-top:-219.5px;">
+	    <div class="o o-facebook"  title="Share this image on Facebook"><a href="http://www.facebook.com/sharer.php?u=http://openwalls.com/image?id=18999&t=The+door" target="_blank"></a></div>
+	    <div class="o o-twitter" title="Share this image on Twitter"><a href="http://twitter.com/home?status=The+door+http%3A%2F%2Fopenwalls.com%2Fimage%3Fid%3D18999" title="Share this image on Twitter" target="_blank"></a></div>
+	    <div class="o o-email send_mail_cursor" title="Send this image to an email address">&nbsp;</div>
+<div style="clear: both"><!-- --></div>
+	  </div>
+
+    <div class="view_image_info7">
+      <div class="" title="Share this image on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fopenwalls.com%2Fimage%3Fid%3D18999&media=http%3A%2F%2Fopenwalls.com%2Fimage%2F18999%2Fthumb3_the_door_.jpg&description=The door" data-pin-do="buttonPin" data-pin-config="none">
+          <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
+        </a>
+      </div>
+    </div>
+		
+
+      <div class="view_image_info3"> 
+	<div class="view_image_vot">
+
+                <div class="o o-report-moderate-disabled" style="position:relative;float:right;" title="You must be logged in to moderate this image"></div>
+        	 
+	  	  <div class="o o-report" style="position:relative;float:right;"><a title="Report image" href="/report?id=18999"></a></div>
+	  <div id="vot_result18999">
+	  <div style="position:relative;float:right;" title="Rating: 0"><div class="o o-spatiu" style="position:relative;float:left;"></div><div class="o o-zero" style="position:relative;float:left;"></div><div class="o o-spatiu" style="position:relative;float:left;"></div></div>
+	  <div class="o o-jos" style="position:relative;float:right;"><a href="#" title="Vote down" id="vot_down" onclick="vote_down(18999);return false;"></a></div>	  
+	  <div class="o o-sus" style="position:relative;float:right;"><a href="#" title="Vote up" id="vot_up18999" onclick="vote_up(18999);return false;"></a></div>
+
+	  	  </div>
+	</div> <!-- view_image_vot-->
+      </div> <!-- view_image_info3-->
+
+      <div class="view_image_info4"> 
+     <form name="edit" method="post" action="" style="display:inline;">
+	<input type="hidden" name="edit" value="edit">
+
+		<div class="o o-edit_black" style="float:left;width:15px;" title="You must be logged in to Edit image"></div>
+	
+	<div class="o o-spatiu_black" style="float:left;width:9px;"></div>
+
+		<div class="o o-delete_black" style="float:left;width:16px;margin-top:-16px;margin-left:24px;" title="You must own the image to Delete it"></div>
+	
+      </form>
+      <div style="clear: both"><!-- --></div>
+      </div>   <!--- div info4???-->
+
+
+
+      <div id="view_image_delete" style="display:none;">
+	Are you sure you want to delete this picture?
+	<br>
+	<form name="delete" method="post" action="http://openwalls.com/image?id=18999" style="display:inline;">
+	<input type="hidden" name="delete_image" value="delete_image">
+		<input type="hidden" name="delete_next" value="17124">
+	<input type="hidden" name="delete_id" value="18999">
+	<input type="hidden" name="delete_title" value="The door">
+	<input type="submit" class="button_delete" value="Delete">
+	</form>
+	<!--<span class="text7">Delete</span>&nbsp;&nbsp;-->
+
+	<a href="#" onclick="document.getElementById('view_image_delete').style.display='none';"><span class="text5">Cancel</span></a>
+      </div>
+
+
+      <div class="view_image_info_details">
+	 <div class="view_image_info_save">
+	  <div class="view_image_info_save1">
+	    <div class="view_image_info_save_button">
+	      save:
+	    </div>
+	    <div class="view_image_info_save_resolution">
+	      view:
+	    </div>
+	  </div>
+	    		  <div class="view_image_info_save1">
+		    <div class="view_image_info_save_button">
+			<div class="o o-down" title="Save image at 2560x1600 pixels" style="position:relative;float:left;"><a href="/down/image/18999/the_door__2560x1600.jpg"></a></div>
+		    </div>
+		    <div class="view_image_info_save_resolution">
+		      <a href="/image/18999/the_door__2560x1600.jpg" target="_blank">2560x1600</a>
+		    </div>
+		  </div>
+		  		  <div class="view_image_info_save1">
+		    <div class="view_image_info_save_button">
+			<div class="o o-down" title="Save image at 1920x1200 pixels" style="position:relative;float:left;"><a href="/down/image/18999/the_door__1920x1200.jpg"></a></div>
+		    </div>
+		    <div class="view_image_info_save_resolution">
+		      <a href="/image/18999/the_door__1920x1200.jpg" target="_blank">1920x1200</a>
+		    </div>
+		  </div>
+		  		  <div class="view_image_info_save1">
+		    <div class="view_image_info_save_button">
+			<div class="o o-down" title="Save image at 1680x1050 pixels" style="position:relative;float:left;"><a href="/down/image/18999/the_door__1680x1050.jpg"></a></div>
+		    </div>
+		    <div class="view_image_info_save_resolution">
+		      <a href="/image/18999/the_door__1680x1050.jpg" target="_blank">1680x1050</a>
+		    </div>
+		  </div>
+		  		  <div class="view_image_info_save1">
+		    <div class="view_image_info_save_button">
+			<div class="o o-down" title="Save image at 1440x900 pixels" style="position:relative;float:left;"><a href="/down/image/18999/the_door__1440x900.jpg"></a></div>
+		    </div>
+		    <div class="view_image_info_save_resolution">
+		      <a href="/image/18999/the_door__1440x900.jpg" target="_blank">1440x900</a>
+		    </div>
+		  </div>
+		  		  <div class="view_image_info_save1">
+		    <div class="view_image_info_save_button">
+			<div class="o o-down" title="Save image at 1280x800 pixels" style="position:relative;float:left;"><a href="/down/image/18999/the_door__1280x800.jpg"></a></div>
+		    </div>
+		    <div class="view_image_info_save_resolution">
+		      <a href="/image/18999/the_door__1280x800.jpg" target="_blank">1280x800</a>
+		    </div>
+		  </div>
+		  	 </div>
+
+<div class="view_image_info_edit">
+	<div class="view_image_row">
+	  <div class="view_image_info_edit_left">
+	    Title:
+	  </div>
+	  
+	  <div class="view_image_info_edit_right">
+	    	      <h1 class="h1_cblack"><a href="/wallpapers?search=the+door">The door</a></h1>
+
+	    	  </div>
+	</div>
+
+	  	<div class="view_image_row">
+    <div class="view_image_info_edit_left">Uploader:</div>
+	  <div class="view_image_info_edit_right">Anonymous</div>
+	</div>
+     
+	<div class="view_image_row">
+		<div class="view_image_info_edit_left">Licence:</div>
+		<div class="view_image_info_edit_right">
+		        <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" ><img src="http://openwalls.com/images/license-a.png" border="0" /></a>
+     		</div>
+	</div>
+
+	<div class="view_image_row">
+	  <div class="view_image_info_edit_left">
+	    Category:
+	  </div>
+
+	  <div class="view_image_info_edit_right">
+	    	      <span class="text_cblack"><a href="/wallpapers?category=others&hmenu=9tz57">Others</a></span>
+	    	  </div>
+	</div>
+	    
+	    	    
+
+	<div class="view_image_row">
+	  <div class="view_image_info_edit_left">Tags:</div>
+	    <div class="view_image_info_edit_right">
+	    		<a href="/wallpapers?search=door">door</a>
+				<a href="/wallpapers?search=room">room</a>
+				<a href="/wallpapers?search=dark">dark</a>
+				<a href="/wallpapers?search=red">red</a>
+				<a href="/wallpapers?search=light">light</a>
+		
+	  </div>
+	</div>
+
+	  </div>
+</div>
+
+
+
+<div class="comments">
+  <div class="comments_line">
+    <form name="comments" id="comments" action="" method="post">
+    <div class="comments_left">
+      <br>Comment:
+    </div>
+    <div class="comments_right">
+    	<div style="width:485px">
+     		<textarea name="comments_text" title="Write a comment..." id="comments_text" rows="2" class="defaultText" style="width: 479px; resize: none; padding: 2px; margin: 0; border:1px solid #4B6796;height: 40px; font-size: 12px; font-family: Arial,Tahoma,sans-serif;"></textarea>
+     	</div>
+      <div style="width: 485px; overflow: auto">
+      	<div style="float: left; margin: 2px 2px 0 0">
+      	  <span class="text8">
+                	    </span>
+    	  </div>        
+      	<div id="counter" style="float:left;margin-top:2px;">(300 characters)</div>
+
+<div style="float:right; margin-bottom: 3px;">
+        	    <div style="margin-top:0px;float:left;">
+	    <div style="margin-top:4px;float:left;padding:0px;">
+	  <div class="o o-w1" style="position:relative;float:left;"></div><div class="o o-w9" style="position:relative;float:left;"></div>	  <div class="o o-wplus" style="position:relative;float:left;"></div><div class="o o-w1" style="position:relative;float:left;"></div><div class="o o-w8" style="position:relative;float:left;"></div><div class="o o-wequal" style="position:relative;float:left;"></div>
+	   </div>  
+	    <input type="hidden" name="captcha_sum" value="37">
+	    
+	    <input type="text" name="captcha_verify" style="width: 16px; height:14px;margin-top:3px;border:1px solid #4B6796;"  value="" style="width:20px; height:16px;"><br>
+	</div>  	    
+	      <input type="hidden" name="comments_duplicate" value="5c8bdee443b79d49627b37ac73894518">
+    <input type="hidden" name="comments_ascuns" value="testsubmit">
+    <div style="margin:3px 0 2px 0;float:right;">
+    <input class="button_comments" type="submit" name="apply" value=" Send ">
+    </div>
+	</div>
+     
+ </div>
+
+    </div>
+    </form>    
+  </div>
+
+
+
+</div>
+
+
+</div>
+</div>
+
+<script type='text/javascript'>
+   $(document).ready(function() {
+            $('#comments_text').keyup(function() {
+                var len = this.value.length;
+                if (len >= 300) {
+                    this.value = this.value.substring(0, 300);
+                }
+                $('#counter').text(300 - len);
+            });
+        });
+</script>
+
+<script type='text/javascript'>
+$(".comments_line_client").hover(
+    function() {
+      $(this).addClass("hover");
+      $(this).find('.comments_report').show();
+  }, function(){
+    $(this).removeClass("hover");
+    $(this).find('.comments_report').hide(); 
+  });
+</script>
+
+<div id="related_images">
+	<div class="related_header">
+  	Related images
+	</div>
+	<div>
+
+
+		<div style="clear: both"><!-- --></div>
+	</div>
+
+	<div class="related_header_down">
+  	&nbsp;
+	</div>
+
+</div>
+
+
+<script type='text/javascript'>
+   $(document).ready(function() {
+            $('#comments_text').keyup(function() {
+                var len = this.value.length;
+                if (len >= 300) {
+                    this.value = this.value.substring(0, 300);
+                }
+                $('#counter').text(300 - len);
+            });
+        });
+</script>
+
+<script type='text/javascript'>
+$(".comments_line_client").hover(
+    function() {
+      $(this).addClass("hover");
+      $(this).find('.comments_report').show();
+  }, function(){
+    $(this).removeClass("hover");
+    $(this).find('.comments_report').hide(); 
+  });
+</script>
+
+<div style="clear: both"><!-- --></div>
+</div>
+<!-- MOVED IN pics_view.php so they can appear above the "Related images:" -->
+<!-- <div id="footer">
+
+
+ <div class="footer_previous">
+
+
+  </div>
+
+ <div class="footer_next">
+
+
+  </div>
+
+</div> -->
+  <div style="clear: both"><!-- --></div>
+
+<div id="newfooter">
+  <div class="o o-line" style="margin: 0 auto">&nbsp</div>
+  <div class="footercopy">Copyright &copy; 2009 - 2018 <a href="http://www.fireways.com.com/" title="Fireways">Fireways</a>. All rights reserved.</div>
+  <div class="footerlinks">
+  	<ul>
+  		<li><a href="/faq">FAQ</a>&bull;</li>
+  		<li><a href="/ctct">Contact</a>&bull;</li>
+  		<li><a href="/sitemap.xml">Sitemap</a>&bull;</li>
+  		<li><a href="http://blog.openwalls.com/">Blog</a></li>
+		</ul>
+  </div>
+  <div class="footercopy" style="color:#000000">
+	<a href="http://www.dontpayfull.com">DontPayFull</a> | <a href="http://www.firecult.com">Firecult</a>
+  </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+// window.alert("hello");
+
+var search_focus = document.getElementById("searchfocus");
+search_focus.focus();
+
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12733505-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".view_pics_image a img, .view_pics_info5, .view_pics_info7").hover(function() {
+    $(this).parents(".view_pics_image").children(".view_pics_info7").show();
+    $(this).parents(".view_pics_image").children(".view_pics_info5").show();
+  }, function() {
+    $(this).parents(".view_pics_image").children(".view_pics_info7").hide();
+    $(this).parents(".view_pics_image").children(".view_pics_info5").hide();
+  });
+
+  // EMAIL SCRIPT
+    // $(".o-email").click(function() {
+    //     $("#send_image_mail").css("display", "inline");
+    //     return false;
+    //  });
+
+    // $(".x_close").click(function() {
+    //     if($("#send_image_mail").css("display") != "none")
+    //       $("#send_image_mail, #send_image_mail_success").fadeOut(300);
+    //     return false;
+    // });
+
+    // $("#send_image_mail").click(function(e) {
+    //   e.stopPropagation(); 
+    // });
+
+    // $(document).click(function(e) {
+    //     if(e.isPropagationStopped()) return;
+    //     if($("#send_image_mail").css("display") != "none") {
+    //       $("#send_image_mail").fadeOut(300);
+    //     }
+    //     if($("#reportwindow").css("display") != "none") {
+    //       $("#reportwindow").fadeOut(300);
+    //     }
+    //     if($("#reportcomment").css("display") != "none")
+    //       $("#reportcomment").fadeOut(300, function() { $(this).remove(); });           
+    // });     
+
+    // $('.button_cancel').click(function() {
+    //   if($("#send_image_mail").css("display") != "none") {
+    //     $("#send_image_mail").fadeOut(300);
+    //   }
+    // });
+
+    // $(document).keydown(function(e) {
+    //   if (e.keyCode == 27) { 
+    //     if($("#send_image_mail").css("display") != "none") {
+    //       $("#send_image_mail").fadeOut(300);
+    //     }
+    //     if($("#reportwindow").css("display") != "none") {
+    //       $("#reportwindow").fadeOut(300);
+    //     }       
+    //     if($("#reportcomment").css("display") != "none")
+    //       $("#reportcomment").fadeOut(300, function() { $(this).remove(); });
+    //     return false;
+    //   }
+    // });
+  // END EMAIL SCRIPT
+});
+</script>
+ </div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- <script type="text/javascript" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script> -->
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+</body>
+</html>
+
+

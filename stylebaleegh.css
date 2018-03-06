@@ -1,0 +1,103 @@
+h1 {
+
+
+	text-align: center;
+	margin-top: 40px;
+}
+
+body{
+
+    /*
+    always specifying margin 0 and padding 0 to the whole body means that we start with a clean slate,
+    with no articial spaces that might be introduced by specific browsers
+    */
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+  
+
+}
+
+
+
+.top_nav {
+
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    z-index: 5;
+    width: 100%;
+    padding-left: 80%;
+    margin-top: 10px;
+
+}
+
+.top_nav a {
+ 
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.top_nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.top_nav a.active {
+    background-color: black;
+    color: white;
+}
+
+.main_content {
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+
+
+.name {
+	margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.images {
+
+
+
+    border-radius: 50%;
+
+    margin-left: 20%;
+
+
+
+}
+
+
+.image_text {
+
+padding-right: 5%;
+padding-left: 5%;
+
+}
+
+table {
+
+width: 100%;
+
+}
+
+td {
+
+	opacity:0.2;
+	transition: opacity 1s;
+
+}
+
+
+
